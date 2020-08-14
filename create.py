@@ -13,7 +13,7 @@ def create():
     folderName = str(sys.argv[1])
     os.makedirs(path + str(folderName))
     user = Github(username, password).get_user()
-    repo = user.create_repo(folderName)
+    repo = user.create_repo(folderName, private=True)
     print("Succesfully created repository {}".format(folderName))
 
 if __name__ == "__main__":
